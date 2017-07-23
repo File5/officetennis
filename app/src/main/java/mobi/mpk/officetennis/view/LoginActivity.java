@@ -3,6 +3,7 @@ package mobi.mpk.officetennis.view;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -32,6 +33,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import mobi.mpk.officetennis.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -45,7 +48,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
-    int a = 0;
 
     /**
      * A dummy authentication store containing known user names and passwords.
@@ -69,6 +71,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        ButterKnife.bind(this);
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -95,6 +100,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+
+    @OnClick(R.id.goToMainActivity)
+    public void goToMainActivity() {
+        Intent intent = MainActivity.getStartIntent(this);
+        startActivity(intent);
     }
 
     private void populateAutoComplete() {
