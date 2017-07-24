@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="mobi.mpk.officetennis.view.GameFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/score_game_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/hostScorePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:np_min="0"
+            app:np_max="5"
+            app:np_wrapSelectorWheel="false"
+            app:np_order="descending"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:text="-"
+            />
+
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/partnerScorePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:np_min="0"
+            app:np_max="5"
+            app:np_wrapSelectorWheel="false"
+            app:np_order="descending"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/deleted_game_layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@mipmap/deleted"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/edit_mode_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <Button
+            android:id="@+id/cancel_game_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableStart="@mipmap/ic_delete_black_48dp"
+            android:drawableLeft="@mipmap/ic_delete_black_48dp"
+            android:text="Отменить игру"
+            android:lines="2"
+            />
+
+        <Button
+            android:id="@+id/finish_game_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableStart="@mipmap/ic_done_black_48dp"
+            android:drawableLeft="@mipmap/ic_done_black_48dp"
+            android:text="Завершить игру"
+            android:lines="2"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/confirm_mode_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/edit_game_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableStart="@mipmap/ic_mode_edit_black_48dp"
+            android:drawableLeft="@mipmap/ic_mode_edit_black_48dp"
+            android:text="Изменить"
+            android:lines="2"
+            />
+
+        <Button
+            android:id="@+id/confirm_game_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableStart="@mipmap/ic_done_black_48dp"
+            android:drawableLeft="@mipmap/ic_done_black_48dp"
+            android:text="Подтвердить"
+            android:lines="2"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
